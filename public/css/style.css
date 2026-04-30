@@ -1,0 +1,321 @@
+/* ===== GENERAL STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: 0.95rem;
+}
+
+nav span {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  position: relative;
+}
+
+nav a:hover {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.5);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+.btn-success:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.5);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  color: #2c3e50;
+  box-shadow: 0 4px 15px rgba(168, 237, 234, 0.3);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(168, 237, 234, 0.5);
+}
+
+/* ===== ALERTS ===== */
+.error {
+  color: #742a2a;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #fed7d7 0%, #fbb6ce 100%);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #f56565;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+.success {
+  color: #22543d;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #38a169;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== FORM ELEMENTS ===== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.95rem 1.2rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+select:disabled {
+  background: #edf2f7;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin: 2rem 0;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #1a202c;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #2d3748;
+}
+
+/* ===== UTILITIES ===== */
+.text-center {
+  text-align: center;
+}
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+
+.flex-gap {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  nav h1 {
+    font-size: 1.5rem;
+  }
+  
+  nav div {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .container {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn-group .btn {
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'Course Management' %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav>
+    <h1>📚 EduHub</h1>
+    <div>
+      <% if (typeof isLoggedIn !== 'undefined' && isLoggedIn) { %>
+        <span>👤 <%= userName %></span>
+        <a href="/courses">Courses</a>
+        <a href="/logout">Logout</a>
+      <% } else { %>
+        <a href="/auth/login">Login</a>
+        <a href="/auth/register">Register</a>
+      <% } %>
+    </div>
+  </nav>
+
+  <%- body %>
+</body>
+</html>

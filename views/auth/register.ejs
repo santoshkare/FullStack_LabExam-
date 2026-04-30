@@ -1,0 +1,69 @@
+<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+  <div style="max-width: 550px; width: 100%; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
+    
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Create Account</h2>
+      <p style="color: #718096; font-size: 0.95rem;">Join our learning community today</p>
+    </div>
+    
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="error" style="margin-bottom: 1.5rem; padding: 1rem; border-radius: 8px;">
+        ⚠️ <%= error %>
+      </div>
+    <% } %>
+
+    <form action="/auth/register" method="POST">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.8rem;">
+        <div>
+          <label for="firstName" style="font-weight: 600; color: #2d3748; margin-bottom: 0.7rem; display: block;">First Name</label>
+          <input type="text" id="firstName" name="firstName" required placeholder="John" style="width: 100%; padding: 0.95rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; background: #f7fafc;">
+        </div>
+        
+        <div>
+          <label for="lastName" style="font-weight: 600; color: #2d3748; margin-bottom: 0.7rem; display: block;">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required placeholder="Doe" style="width: 100%; padding: 0.95rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; background: #f7fafc;">
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1.8rem;">
+        <label for="email" style="font-weight: 600; color: #2d3748; margin-bottom: 0.7rem; display: block;">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com" style="width: 100%; padding: 0.95rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; background: #f7fafc;">
+      </div>
+
+      <div style="margin-bottom: 1.8rem;">
+        <label for="password" style="font-weight: 600; color: #2d3748; margin-bottom: 0.7rem; display: block;">Password</label>
+        <input type="password" id="password" name="password" required placeholder="••••••••" style="width: 100%; padding: 0.95rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; background: #f7fafc;">
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.8rem;">
+        <div>
+          <label for="gender" style="font-weight: 600; color: #2d3748; margin-bottom: 0.7rem; display: block;">Gender</label>
+          <select id="gender" name="gender" required style="width: 100%; padding: 0.95rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; background: #f7fafc; cursor: pointer;">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="number" style="font-weight: 600; color: #2d3748; margin-bottom: 0.7rem; display: block;">Phone Number</label>
+          <input type="text" id="number" name="number" required placeholder="03001234567" style="width: 100%; padding: 0.95rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; background: #f7fafc;">
+        </div>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <label for="courseName" style="font-weight: 600; color: #2d3748; margin-bottom: 0.7rem; display: block;">Enroll in Course</label>
+        <select id="courseName" name="courseName" required style="width: 100%; padding: 0.95rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; background: #f7fafc; cursor: pointer;">
+          <option value="WEB">🌐 WEB Development</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-success" style="width: 100%; padding: 1rem; font-size: 1rem; font-weight: 600; border: none; cursor: pointer;">Create Account</button>
+    </form>
+
+    <p style="margin-top: 2rem; text-align: center; color: #718096; font-size: 0.95rem;">
+      Already have an account? <a href="/auth/login" style="color: #667eea; font-weight: 600; text-decoration: none;">Sign in</a>
+    </p>
+  </div>
+</div>

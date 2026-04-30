@@ -1,0 +1,52 @@
+<div class="container">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; flex-wrap: wrap; gap: 2rem;">
+    <div>
+      <h1 style="margin-bottom: 0.5rem;">Explore Courses</h1>
+      <p style="color: #718096; font-size: 1rem;">Level up your skills with our amazing courses</p>
+    </div>
+    <a href="/courses/new" class="btn btn-success" style="font-size: 1rem; padding: 1rem 2rem;">
+      ➕ Add New Course
+    </a>
+  </div>
+
+  <% if (courses.length > 0) { %>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; margin: 2rem 0;">
+      <% courses.forEach(course => { %>
+        <div class="card" style="background: white; border-radius: 12px; overflow: hidden; padding: 0;">
+          <div style="position: relative; overflow: hidden; height: 220px;">
+            <img src="<%= course.image %>" alt="<%= course.courseName %>" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+            <div style="position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.6rem 1.2rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">
+              $<%= course.price %>
+            </div>
+          </div>
+          
+          <div style="padding: 1.8rem;">
+            <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #1a202c;"><%= course.courseName %></h3>
+            
+            <div style="space-y: 1rem; margin-bottom: 1.5rem;">
+              <p style="margin-bottom: 0.8rem; color: #718096; font-size: 0.95rem;">
+                <span style="font-weight: 600;">📚 Duration:</span> <%= course.duration %> weeks
+              </p>
+              <p style="margin-bottom: 0.8rem; color: #718096; font-size: 0.95rem;">
+                <span style="font-weight: 600;">📅 Start:</span> <%= new Date(course.courseStartDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %>
+              </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;">
+              <a href="/courses/<%= course._id %>" class="btn" style="text-align: center; padding: 0.7rem 0.5rem; font-size: 0.85rem; flex: 1;">👁️ View</a>
+              <a href="/courses/<%= course._id %>/edit" class="btn" style="text-align: center; padding: 0.7rem 0.5rem; font-size: 0.85rem; flex: 1;">✏️ Edit</a>
+              <a href="/courses/<%= course._id %>/delete" class="btn btn-danger" style="text-align: center; padding: 0.7rem 0.5rem; font-size: 0.85rem; flex: 1;" onclick="return confirm('Delete this course?')">🗑️</a>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <div style="text-align: center; padding: 4rem 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">📭</div>
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">No Courses Yet</h3>
+      <p style="color: #718096; margin-bottom: 2rem;">Be the first to create a course!</p>
+      <a href="/courses/new" class="btn btn-success" style="font-size: 1rem; padding: 1rem 2rem;">Create First Course</a>
+    </div>
+  <% } %>
+</div>
